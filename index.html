@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="my">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VLESS Node Converter</title>
+    <title>VLESS Node Converter (မြန်မာ)</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Pyidaungsu', 'Segoe UI', Tahoma, sans-serif;
             background-color: #f0f2f5;
             padding: 20px;
             line-height: 1.6;
+            direction: ltr;
         }
         .container {
             max-width: 900px;
@@ -19,7 +20,7 @@
             border-radius: 15px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
-        h2 { color: #1a73e8; text-align: center; }
+        h2 { color: #1a73e8; text-align: center; margin-bottom: 20px; }
         .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
         label { font-weight: bold; display: block; margin-bottom: 8px; color: #444; }
         textarea {
@@ -54,39 +55,41 @@
         button:hover { opacity: 0.9; }
         button:active { transform: scale(0.98); }
         .info {
-            background: #e8f0fe;
+            background: #fff4e5;
             padding: 15px;
-            border-radius: 8px;
+            border-left: 5px solid #ffa000;
+            border-radius: 4px;
             font-size: 0.9em;
             margin-bottom: 20px;
         }
+        .info b { color: #d32f2f; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>VLESS Domain Converter</h2>
+    <h2>VLESS Domain ပြောင်းပေးသည့်ကိရိယာ</h2>
     
     <div class="info">
-        <strong>Automatic Replacements:</strong><br>
-        1. ilubbt3.linlin.codes ➔ <b>ilj3.mmcloudx.website</b><br>
-        2. aarielt1.linlin.codes ➔ <b>kklj1.mmcloudx.website</b>
+        <strong>အလိုအလျောက် ပြောင်းလဲပေးမည့် Host များ -</strong><br>
+        • ilubbt3.linlin.codes ➔ <b>ilj3.mmcloudx.website</b><br>
+        • aarielt1.linlin.codes ➔ <b>kklj1.mmcloudx.website</b>
     </div>
 
     <div class="grid">
         <div>
-            <label>Paste Old Configs Here:</label>
-            <textarea id="inputArea" placeholder="Paste your vless:// links here..."></textarea>
+            <label>ယခင် Config အဟောင်းများကို ဤနေရာတွင် ထည့်ပါ -</label>
+            <textarea id="inputArea" placeholder="vless:// လင့်ခ်များကို ဤနေရာတွင် paste လုပ်ပါ..."></textarea>
         </div>
 
         <div class="controls">
-            <button class="btn-convert" onclick="convertConfigs()">Convert Configs</button>
-            <button class="btn-copy" onclick="copyResult()">Copy Results</button>
+            <button class="btn-convert" onclick="convertConfigs()">Host ပြောင်းမည်</button>
+            <button class="btn-copy" onclick="copyResult()">Copy ကူးမည်</button>
         </div>
 
         <div>
-            <label>New Configs (Updated Host & SNI):</label>
-            <textarea id="outputArea" readonly placeholder="Result will appear here..."></textarea>
+            <label>Host အသစ် ပြောင်းလဲပြီးသား Config များ -</label>
+            <textarea id="outputArea" readonly placeholder="ရလဒ်ကို ဤနေရာတွင် ပြပေးပါမည်..."></textarea>
         </div>
     </div>
 </div>
@@ -94,6 +97,10 @@
 <script>
     function convertConfigs() {
         const input = document.getElementById('inputArea').value;
+        if (!input.trim()) {
+            alert("ကျေးဇူးပြု၍ config များ အရင်ထည့်ပါ။");
+            return;
+        }
         
         // Replacement Rules
         let result = input
@@ -108,12 +115,12 @@
     function copyResult() {
         const output = document.getElementById('outputArea');
         if (!output.value) {
-            alert("Nothing to copy!");
+            alert("Copy ကူးရန် ရလဒ်မရှိသေးပါ။");
             return;
         }
         output.select();
         document.execCommand('copy');
-        alert("Copied to clipboard!");
+        alert("Copy ကူးပြီးပါပြီ။");
     }
 </script>
 
