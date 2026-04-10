@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLESS Configs - tt1-Hp</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+        h2 { color: #333; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .section-label { font-weight: bold; margin: 15px 0 5px 0; color: #555; }
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            resize: vertical;
+            background-color: #fafafa;
+            box-sizing: border-box;
+        }
+        .btn-group { margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap; }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .copy-btn { background-color: #007bff; color: white; }
+        .copy-btn:hover { background-color: #0056b3; }
+        .sub-btn { background-color: #28a745; color: white; }
+        .sub-btn:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Server Configs: tt1-Hp</h2>
+    
+    <div class="section-label">VLESS Configurations:</div>
+    <textarea id="configText" readonly>vless://5ca3bbca-02ee-4956-88c2-20beb6ec0d68@www.udemy.com:443?type=ws&encryption=none&path=%2Fminargo&host=kklj1.mmcloudx.website&security=tls&sni=kklj1.mmcloudx.website#tt1-Hp
+vless://5ca3bbca-02ee-4956-88c2-20beb6ec0d68@about.com:443?type=ws&encryption=none&path=%2Fminargo&host=kklj1.mmcloudx.website&security=tls&sni=kklj1.mmcloudx.website#tt1-Hp
+vless://5ca3bbca-02ee-4956-88c2-20beb6ec0d68@kyauksetu.edu.mm:443?type=ws&encryption=none&path=%2Fminargo&host=kklj1.mmcloudx.website&security=tls&sni=kklj1.mmcloudx.website#tt1-Hp
+vless://5ca3bbca-02ee-4956-88c2-20beb6ec0d68@zhein4ttt4.zheint.xyz:443?type=ws&encryption=none&path=%2Fminargo&host=kklj1.mmcloudx.website&security=tls&sni=kklj1.mmcloudx.website#tt1-Hp
+vless://5ca3bbca-02ee-4956-88c2-20beb6ec0d68@vimeo.com:443?type=ws&encryption=none&path=%2Fminargo&host=kklj1.mmcloudx.website&security=tls&sni=kklj1.mmcloudx.website#tt1-Hp
+vless://5ca3bbca-02ee-4956-88c2-20beb6ec0d68@mpt.com.mm:443?type=ws&encryption=none&path=%2Fminargo&host=kklj1.mmcloudx.website&security=tls&sni=kklj1.mmcloudx.website#tt1-Hp
+vless://5ca3bbca-02ee-4956-88c2-20beb6ec0d68@ehow.com:443?type=ws&encryption=none&path=%2Fminargo&host=kklj1.mmcloudx.website&security=tls&sni=kklj1.mmcloudx.website#tt1-Hp
+vless://5ca3bbca-02ee-4956-88c2-20beb6ec0d68@neobux.com:443?type=ws&encryption=none&path=%2Fminargo&host=kklj1.mmcloudx.website&security=tls&sni=kklj1.mmcloudx.website#tt1-Hp</textarea>
+
+    <div class="section-label">Subscription Link:</div>
+    <textarea id="subLink" style="height: 50px;" readonly>http://142.91.103.251:2096/sub/x5ocagb2kgqh8fij</textarea>
+
+    <div class="btn-group">
+        <button class="copy-btn" onclick="copyToClipboard('configText')">Copy Configs</button>
+        <button class="sub-btn" onclick="copyToClipboard('subLink')">Copy Sub Link</button>
+    </div>
+</div>
+
+<script>
+    function copyToClipboard(id) {
+        const copyText = document.getElementById(id);
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); // For mobile devices
+        navigator.clipboard.writeText(copyText.value);
+        alert("Copied to clipboard!");
+    }
+</script>
+
+</body>
+</html>
